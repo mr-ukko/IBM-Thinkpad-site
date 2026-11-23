@@ -1,6 +1,19 @@
 // IBM-era ThinkPads (1992 to 2005). All data for this site lives here.
-// To add a model: add an entry below, then run
-//   ./new-model.sh <id>        (creates /<id>/index.html)
+// To add a model: add an entry below, then run  ./new-model.sh <id>
+//
+// Model fields
+//   id, name, year, series, summary
+//   specs   : { "Label": "Value", ... }          free-form rows
+//   gpu     : [ { name, type, optional, vram, note } ]
+//               type     "integrated" = built into the CPU/chipset, shares system RAM
+//                        "discrete"   = separate GPU chip with its own video memory (soldered, can't be added later)
+//               optional true  = only some configurations have it (chosen when buying)
+//   storage : [ { slot, interface, note } ]     every place a drive can go (2.5" bay, PC Card, mSATA...)
+//   ports   : [ { name, count, note } ]         count and note are optional
+//   notes   : [ { text, source, unverified } ]  extra info; source (URL) and unverified (true) are optional
+//   docs    : [ { label, url } ]                spec sheets and other links (external URL or a file in this repo)
+//   pros, cons : [ "text", ... ]
+//   verified: true   (add once you have checked the data; unverified pages show a small notice)
 (window.THINKPAD = window.THINKPAD || {}).ibm = {
   site: {
     label: "IBM",
@@ -25,6 +38,19 @@
         "Keyboard": "Expanding \"butterfly\" keyboard (full-size keys on a small body)",
         "Weight": "~2 kg",
       },
+      gpu: [
+        { name: "Onboard VGA graphics chip", type: "discrete", note: "Separate soldered graphics chip. Details vary; please verify." },
+      ],
+      storage: [
+        { slot: "2.5\" drive bay", interface: "IDE (PATA)", note: "Not covered by the ThinkWiki SSD guide, which starts at the X60/T60 era. Details not yet checked." },
+      ],
+      ports: [
+        { name: "Serial port" },
+        { name: "Parallel port" },
+        { name: "External VGA" },
+        { name: "PC Card (PCMCIA) slot" },
+        { name: "Infrared (IrDA)" },
+      ],
       pros: ["Iconic, clever mechanical design", "Full-size keyboard in a small body", "Collector favourite"],
       cons: ["Very slow by modern standards", "Rare and fragile mechanism", "Hard to find parts"],
     },
@@ -42,6 +68,24 @@
         "Keyboard": "Classic 7-row",
         "Weight": "~2.2 kg",
       },
+      gpu: [
+        { name: "ATI Mobility Radeon 7500", type: "discrete", vram: "16 MB", note: "Separate soldered chip with its own video memory." },
+      ],
+      storage: [
+        { slot: "2.5\" drive bay", interface: "IDE (PATA)", note: "Not covered by the ThinkWiki SSD guide, which starts at the X60/T60 era. Details not yet checked." },
+        { slot: "PC Card slot", interface: "PCMCIA / CardBus", note: "Can hold storage cards." },
+      ],
+      ports: [
+        { name: "USB 2.0", count: 2 },
+        { name: "VGA" },
+        { name: "S-Video out" },
+        { name: "Ethernet (RJ-45)" },
+        { name: "Modem (RJ-11)" },
+        { name: "PC Card slot", note: "Type II ×2 or Type III ×1" },
+        { name: "Infrared (IrDA)" },
+        { name: "Headphone / microphone jacks" },
+        { name: "Docking connector" },
+      ],
       pros: ["Excellent keyboard", "Rugged magnesium-reinforced build", "Efficient Pentium M"],
       cons: ["Low-resolution screen", "Old ports and drives", "Aging batteries"],
     },
@@ -59,6 +103,21 @@
         "Keyboard": "Classic ThinkPad keyboard",
         "Weight": "~1.4 kg",
       },
+      gpu: [
+        { name: "Intel Extreme Graphics 2", type: "integrated", note: "Part of the chipset, shares system memory. No discrete GPU option." },
+      ],
+      storage: [
+        { slot: "2.5\" drive bay", interface: "IDE (PATA)", note: "Not covered by the ThinkWiki SSD guide, which starts at the X60/T60 era. Details not yet checked." },
+      ],
+      ports: [
+        { name: "USB 2.0", count: 2 },
+        { name: "VGA" },
+        { name: "Ethernet (RJ-45)" },
+        { name: "Modem (RJ-11)" },
+        { name: "PC Card slot", count: 1 },
+        { name: "Headphone / microphone jacks" },
+        { name: "Docking connector", note: "X3 UltraBase" },
+      ],
       pros: ["Very portable for its time", "Great keyboard", "Tough build"],
       cons: ["No built-in optical drive (needs external)", "Low performance by modern standards"],
     },
@@ -76,6 +135,23 @@
         "Keyboard": "Classic 7-row",
         "Weight": "~2.2 kg",
       },
+      gpu: [
+        { name: "ATI Mobility Radeon 7500", type: "discrete", vram: "16–32 MB", note: "Separate soldered chip with its own video memory." },
+      ],
+      storage: [
+        { slot: "2.5\" drive bay", interface: "IDE (PATA)", note: "Not covered by the ThinkWiki SSD guide, which starts at the X60/T60 era. Details not yet checked." },
+        { slot: "PC Card slot", interface: "PCMCIA / CardBus", note: "Can hold storage cards." },
+      ],
+      ports: [
+        { name: "USB 2.0", count: 2 },
+        { name: "VGA" },
+        { name: "S-Video out" },
+        { name: "Ethernet (RJ-45)" },
+        { name: "Modem (RJ-11)" },
+        { name: "PC Card slot", note: "Type II ×2 or Type III ×1" },
+        { name: "Headphone / microphone jacks" },
+        { name: "Docking connector" },
+      ],
       pros: ["Optional SXGA+ display", "Great keyboard", "Very durable"],
       cons: ["Single-core CPU", "No modern ports", "Hard to find fresh batteries"],
     },
