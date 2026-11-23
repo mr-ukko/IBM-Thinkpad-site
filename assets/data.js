@@ -1,0 +1,83 @@
+// IBM-era ThinkPads (1992 to 2005). All data for this site lives here.
+// To add a model: add an entry below, then run
+//   ./new-model.sh <id>        (creates /<id>/index.html)
+(window.THINKPAD = window.THINKPAD || {}).ibm = {
+  site: {
+    label: "IBM",
+    name: "IBM ThinkPads",
+    tagline: "The original ThinkPads from the IBM era (1992 to 2005): specs, strengths and quirks.",
+    host: "https://ibm.thinkpad.fi/",
+    main: "https://thinkpad.fi/",
+    other: { name: "Lenovo ThinkPads", url: "https://lenovo.thinkpad.fi/" },
+  },
+  models: [
+    {
+      id: "701c",
+      name: "ThinkPad 701C",
+      year: 1995,
+      series: "7xx",
+      summary: "The \"Butterfly\" ThinkPad with its famous expanding keyboard, an icon of the IBM era.",
+      specs: {
+        "Display": "10.4\" 640×480 TFT",
+        "CPU": "Intel 486DX4 (75 MHz class)",
+        "Memory": "Small by today's standards, expandable with proprietary modules",
+        "Storage": "2.5\" IDE hard disk",
+        "Keyboard": "Expanding \"butterfly\" keyboard (full-size keys on a small body)",
+        "Weight": "~2 kg",
+      },
+      pros: ["Iconic, clever mechanical design", "Full-size keyboard in a small body", "Collector favourite"],
+      cons: ["Very slow by modern standards", "Rare and fragile mechanism", "Hard to find parts"],
+    },
+    {
+      id: "t40",
+      name: "ThinkPad T40",
+      year: 2002,
+      series: "T",
+      summary: "A solid Pentium M era business laptop, known for its excellent keyboard and build quality.",
+      specs: {
+        "Display": "14.1\" 1024×768 XGA",
+        "CPU": "Intel Pentium M 1.3–1.6 GHz (Banias)",
+        "Memory": "DDR SO-DIMM, up to 2 GB",
+        "Storage": "2.5\" IDE",
+        "Keyboard": "Classic 7-row",
+        "Weight": "~2.2 kg",
+      },
+      pros: ["Excellent keyboard", "Rugged magnesium-reinforced build", "Efficient Pentium M"],
+      cons: ["Low-resolution screen", "Old ports and drives", "Aging batteries"],
+    },
+    {
+      id: "x31",
+      name: "ThinkPad X31",
+      year: 2003,
+      series: "X",
+      summary: "A light, compact 12-inch ThinkPad from the IBM years, popular with early mobile professionals.",
+      specs: {
+        "Display": "12.1\" 1024×768 XGA",
+        "CPU": "Intel Pentium M",
+        "Memory": "DDR SO-DIMM, upgradeable",
+        "Storage": "2.5\" IDE",
+        "Keyboard": "Classic ThinkPad keyboard",
+        "Weight": "~1.4 kg",
+      },
+      pros: ["Very portable for its time", "Great keyboard", "Tough build"],
+      cons: ["No built-in optical drive (needs external)", "Low performance by modern standards"],
+    },
+    {
+      id: "t42",
+      name: "ThinkPad T42",
+      year: 2004,
+      series: "T",
+      summary: "A late IBM-era T-series with Pentium M Dothan processors and optional high-resolution display.",
+      specs: {
+        "Display": "14.1\" XGA or SXGA+ (1400×1050)",
+        "CPU": "Intel Pentium M 1.7–2.0 GHz (Dothan)",
+        "Memory": "DDR SO-DIMM, up to 2 GB",
+        "Storage": "2.5\" IDE",
+        "Keyboard": "Classic 7-row",
+        "Weight": "~2.2 kg",
+      },
+      pros: ["Optional SXGA+ display", "Great keyboard", "Very durable"],
+      cons: ["Single-core CPU", "No modern ports", "Hard to find fresh batteries"],
+    },
+  ],
+};
